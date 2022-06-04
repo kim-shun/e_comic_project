@@ -3,5 +3,5 @@ from . import views
 
 app_name = 'e_comic_app'
 urlpatterns = [
-    path('',views.EComicDisp.as_view(), name="e_comic_disp"),
+    path('', views.EComicDisp.as_view(), name="e_comic_disp"),
 ]
