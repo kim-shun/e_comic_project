@@ -12,6 +12,16 @@
     {% block head %}{% endblock %}
   </head>
   <body>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+          <a class="nav-link {% block active_e_comic_index %}{% endblock %}" href="{% url 'e_comic_app:e_comic_index' %}">ホーム</a>
+      </li>
+      {% comment %} {% if user.is_authenticated %} {% endcomment %}
+      <li class="nav-item">
+          <a class="nav-link {% block active_e_comic_create %}{% endblock %}" href="{% url 'e_comic_app:e_comic_create' %}">漫画登録</a>
+      </li>
+      {% comment %} {% endif %} {% endcomment %}
+    </ul>
     <ul class="navbar-nav ms-auto">
       {% if user.is_authenticated %}
       <li class="nav-item">
