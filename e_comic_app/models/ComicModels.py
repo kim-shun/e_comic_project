@@ -11,9 +11,9 @@ class Author(models.Model):
 class Comic(models.Model):
     comic_name = models.CharField(verbose_name="漫画名", max_length=100, null=False, unique=True)
     author_1 = models.ForeignKey(Author, verbose_name="作者1", max_length=70, null=True, related_name="re_author_1", on_delete=models.PROTECT)
-    author_2 = models.ForeignKey(Author, verbose_name="作者2", max_length=70, null=True, related_name="re_author_1", on_delete=models.PROTECT)
-    author_3 = models.ForeignKey(Author, verbose_name="作者3", max_length=70, null=True, related_name="re_author_1", on_delete=models.PROTECT)
-    author_4 = models.ForeignKey(Author, verbose_name="作者4", max_length=70, null=True, related_name="re_author_1", on_delete=models.PROTECT)
+    author_2 = models.ForeignKey(Author, verbose_name="作者2", max_length=70, null=True, related_name="re_author_2", on_delete=models.PROTECT)
+    author_3 = models.ForeignKey(Author, verbose_name="作者3", max_length=70, null=True, related_name="re_author_3", on_delete=models.PROTECT)
+    author_4 = models.ForeignKey(Author, verbose_name="作者4", max_length=70, null=True, related_name="re_author_4", on_delete=models.PROTECT)
     remarks = models.CharField(verbose_name="備考", max_length=200, null=True)
     created_at = models.DateTimeField(verbose_name='作成日時', auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name='更新日時', auto_now=True)

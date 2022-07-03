@@ -1,0 +1,25 @@
+{% block content %}
+{% comment %} <h1>漫画を登録しよう</h1>
+<div class="container">
+  <div class="jumbotron">
+      <form method="POST">
+          {{ form.as_p }}
+            {{ formset.management_form }}
+            {% for result_form in formset %}
+                {{ result_form.as_p }} 
+            {% endfor %}
+
+          {% csrf_token %}
+          <input type="submit" class="btn btn-primary" value="登録">
+      </form>
+  </div>
+</div> {% endcomment %}
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit" name="submit">Submit</button>
+</form>
+{% comment %} {% for m in model %}
+  <p>{{ m.author }}</p>
+{% endfor %} {% endcomment %}
+{% endblock %}
